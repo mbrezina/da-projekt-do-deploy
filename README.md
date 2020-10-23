@@ -27,7 +27,7 @@ else
 eval ssh-agent -s
 fi
 
-1. Create terraform` directory and move into it
+1. Create 'terraform' directory and move into it
 1. Run `terraform init` - this will initialize local state storage.
 1. You will use 2 files  
 
