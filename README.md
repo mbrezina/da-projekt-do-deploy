@@ -37,3 +37,19 @@ You can check whether the ssh agent is already running on your computer with thi
 variable "do_token" {
   default = "your_token"
 }
+
+// name (in DO) of the SSH key that will be deployed to the provisioned Droplet
+variable "ssh_key_name" {
+  default = "name of your ssh key"
+}
+
+// DigitalOcean region where the resources will be created
+variable "region" {
+  default = "ams3"
+}
+
+(2) main.tf - example is in this repository
+
+1. Run `terraform plan` to review all the resources that will be created.
+1. Run `terraform apply` - all the resources will be created.
+1. Run `terraform destroy` to destroy all the created resources.
