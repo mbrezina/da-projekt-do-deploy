@@ -20,12 +20,12 @@ You will need name of this key later.
 Terraform will establish SSH connection to the new server, and it doesn't support password protected SSH keys. So we need SSH agent. 
 You can check whether the ssh agent is already running on your computer with this Bash script that can bet put in the commandline:
 
-if ps -p $SSH_AGENT_PID > /dev/null
-then
-echo "ssh-agent is already running"
-else
-eval ssh-agent -s
-fi
+    if ps -p $SSH_AGENT_PID > /dev/null
+    then
+    echo "ssh-agent is already running"
+    else
+    eval ssh-agent -s
+    fi
 
 1. Create 'terraform' directory and move into it
 1. Run `terraform init` - this will initialize local state storage.
@@ -35,21 +35,5 @@ fi
 
 // your DigitalOcean API token
 variable "do_token" {
-  default = "11111111your_token1111111111"
+  default = "your_token"
 }
-
-// name (in DO) of the SSH key that will be deployed to the provisioned Droplet
-variable "ssh_key_name" {
-  default = "name of your ssh key"
-}
-
-// DigitalOcean region where the resources will be created
-variable "region" {
-  default = "ams3"
-}
-
-(2) main.tf - example is in this repository
-
-1. Run `terraform plan` to review all the resources that will be created.
-1. Run `terraform apply` - all the resources will be created.
-1. Run `terraform destroy` to destroy all the created resources.
